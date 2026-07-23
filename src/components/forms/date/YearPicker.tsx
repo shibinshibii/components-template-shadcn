@@ -27,8 +27,7 @@ export function YearPicker({
   return (
     <FieldWrapper id={inputId} label={label} description={description} error={error} required={required} tooltip={tooltip} helperText={helperText} className={className}>
       <Popover open={open} onOpenChange={setOpen}>
-        <PopoverTrigger asChild>
-          <button
+        <PopoverTrigger render={<button
             id={inputId}
             disabled={disabled}
             className={cn(
@@ -39,8 +38,7 @@ export function YearPicker({
           >
             <CalendarIcon className="mr-2 h-4 w-4 opacity-50 shrink-0" />
             {value ? value : <span>{placeholder}</span>}
-          </button>
-        </PopoverTrigger>
+          </button>} />
         <PopoverContent className="w-[280px] p-3" align="start">
           <div className="flex items-center justify-between mb-4">
             <button

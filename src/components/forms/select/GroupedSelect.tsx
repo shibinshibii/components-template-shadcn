@@ -42,8 +42,7 @@ export function GroupedSelect({
     <FieldWrapper id={inputId} label={label} description={description} error={error} required={required} tooltip={tooltip} helperText={helperText} className={className}>
       <Popover open={open} onOpenChange={setOpen}>
         <div className="relative">
-          <PopoverTrigger asChild>
-            <button
+          <PopoverTrigger render={<button
               id={inputId}
               type="button"
               disabled={disabled}
@@ -58,8 +57,7 @@ export function GroupedSelect({
                 </span>
               </div>
               <ChevronDown className="h-4 w-4 opacity-50 shrink-0" />
-            </button>
-          </PopoverTrigger>
+            </button>} />
           
           {clearable && value && !disabled && (
             <button

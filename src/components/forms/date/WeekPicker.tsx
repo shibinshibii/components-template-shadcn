@@ -35,8 +35,7 @@ export function WeekPicker({
   return (
     <FieldWrapper id={inputId} label={label} description={description} error={error} required={required} tooltip={tooltip} helperText={helperText} className={className}>
       <Popover open={open} onOpenChange={setOpen}>
-        <PopoverTrigger asChild>
-          <button
+        <PopoverTrigger render={<button
             id={inputId}
             disabled={disabled}
             className={cn(
@@ -49,8 +48,7 @@ export function WeekPicker({
             <span className="truncate">
               {value ? `${format(value, "LLL dd")} - ${format(endOfWeek(value), "LLL dd, yyyy")}` : placeholder}
             </span>
-          </button>
-        </PopoverTrigger>
+          </button>} />
         <PopoverContent className="w-auto p-0" align="start">
           <Calendar
             mode="single"
@@ -63,7 +61,7 @@ export function WeekPicker({
             modifiersStyles={{
               selected: { backgroundColor: 'var(--primary)', color: 'var(--primary-foreground)' }
             }}
-            initialFocus
+
           />
         </PopoverContent>
       </Popover>

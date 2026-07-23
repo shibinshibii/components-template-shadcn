@@ -36,7 +36,7 @@ export function AppSelect({
       <div className="relative">
         <Select value={value} onValueChange={(val) => {
           // Defer the state update so the select closes instantly without waiting for a heavy parent re-render
-          setTimeout(() => onChange?.(val), 0);
+          setTimeout(() => onChange?.(val as string), 0);
         }} disabled={disabled || loading}>
           <SelectTrigger id={inputId} className={cn(error && "border-danger focus:ring-danger", "pr-8 relative")}>
             <div className="flex-1 text-left truncate">

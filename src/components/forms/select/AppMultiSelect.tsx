@@ -42,8 +42,7 @@ export function AppMultiSelect({
   return (
     <FieldWrapper id={inputId} label={label} description={description} error={error} required={required} tooltip={tooltip} helperText={helperText} className={className}>
       <Popover open={open} onOpenChange={setOpen}>
-        <PopoverTrigger asChild>
-          <button
+        <PopoverTrigger render={<button
             id={inputId}
             type="button"
             disabled={disabled}
@@ -73,8 +72,7 @@ export function AppMultiSelect({
               ))}
             </div>
             <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 h-4 w-4 opacity-50 shrink-0" />
-          </button>
-        </PopoverTrigger>
+          </button>} />
         
         <PopoverContent className="w-[var(--radix-popover-trigger-width)] p-0" align="start">
           <Command>

@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react"
+import { useState, useRef } from "react"
 import {
   type ColumnDef,
   flexRender,
@@ -24,6 +24,7 @@ import {
 import { DataTablePagination } from "./DataTablePagination"
 import { DataTableToolbar } from "./DataTableToolbar"
 import { Skeleton } from "@/components/ui/skeleton"
+import { Text, Muted } from "@/components/typography"
 import { EmptyCard } from "@/components/ui/card"
 import { AlertCircle } from "lucide-react"
 import { cn } from "@/lib/utils"

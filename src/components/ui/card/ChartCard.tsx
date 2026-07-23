@@ -1,6 +1,7 @@
 import React from 'react';
 import { AppCard, CardHeader, CardBody } from './AppCard';
 import { CardTitle, Muted } from '@/components/typography';
+import { cn } from '@/lib/utils';
 
 export interface ChartCardProps {
   title: string;

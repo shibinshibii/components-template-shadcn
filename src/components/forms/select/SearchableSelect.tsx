@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { cn } from '@/lib/utils';
 import { FieldWrapper, type FieldWrapperProps } from '../FieldWrapper';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
@@ -31,8 +31,7 @@ export function SearchableSelect({
     <FieldWrapper id={inputId} label={label} description={description} error={error} required={required} tooltip={tooltip} helperText={helperText} className={className}>
       <Popover open={open} onOpenChange={setOpen}>
         <div className="relative">
-          <PopoverTrigger asChild>
-            <button
+          <PopoverTrigger render={<button
               id={inputId}
               type="button"
               disabled={disabled || loading}
@@ -48,8 +47,7 @@ export function SearchableSelect({
                 </span>
               </div>
               <ChevronDown className="h-4 w-4 opacity-50 shrink-0" />
-            </button>
-          </PopoverTrigger>
+            </button>} />
           
           {clearable && value && !disabled && !loading && (
             <button

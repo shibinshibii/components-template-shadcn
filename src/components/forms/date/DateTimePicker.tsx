@@ -44,8 +44,7 @@ export function DateTimePicker({
   return (
     <FieldWrapper id={inputId} label={label} description={description} error={error} required={required} tooltip={tooltip} helperText={helperText} className={className}>
       <Popover open={open} onOpenChange={setOpen}>
-        <PopoverTrigger asChild>
-          <button
+        <PopoverTrigger render={<button
             id={inputId}
             disabled={disabled}
             className={cn(
@@ -58,15 +57,14 @@ export function DateTimePicker({
             <span className="truncate">
               {value ? format(value, "PPP HH:mm") : placeholder}
             </span>
-          </button>
-        </PopoverTrigger>
+          </button>} />
         <PopoverContent className="w-auto p-0" align="start">
           <div className="p-3">
             <Calendar
               mode="single"
               selected={value}
               onSelect={handleDateSelect}
-              initialFocus
+
             />
             <div className="mt-4 border-t border-border pt-4">
               <div className="flex items-center gap-2 px-2">

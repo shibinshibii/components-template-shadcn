@@ -60,8 +60,7 @@ export function DateRangePicker({
   return (
     <FieldWrapper id={inputId} label={label} description={description} error={error} required={required} tooltip={tooltip} helperText={helperText} className={className}>
       <Popover open={open} onOpenChange={setOpen}>
-        <PopoverTrigger asChild>
-          <button
+        <PopoverTrigger render={<button
             id={inputId}
             disabled={disabled}
             className={cn(
@@ -80,8 +79,7 @@ export function DateRangePicker({
                 )
               ) : placeholder}
             </span>
-          </button>
-        </PopoverTrigger>
+          </button>} />
         <PopoverContent className="w-auto p-0" align="start">
           <div className="flex flex-col sm:flex-row">
             {presets && presets.length > 0 && (
@@ -105,7 +103,7 @@ export function DateRangePicker({
                   if (maxDate && date > maxDate) return true;
                   return false;
                 }}
-                initialFocus
+
               />
             </div>
           </div>
