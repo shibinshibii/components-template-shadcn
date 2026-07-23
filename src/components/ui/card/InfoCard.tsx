@@ -1,7 +1,7 @@
-import React from 'react';
+
 import { AppCard, CardBody } from './AppCard';
 import { Text, Muted } from '@/components/typography';
-import { Info, CheckCircle, AlertTriangle, XCircle, type LucideIcon } from 'lucide-react';
+import { Info, CheckCircle, AlertTriangle, XCircle } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 export interface InfoCardProps {

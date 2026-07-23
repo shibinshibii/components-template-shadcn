@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { AppCard, CardHeader, CardBody } from '@/components/ui/card';
 import { CardTitle, Muted, Text } from '@/components/typography';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';

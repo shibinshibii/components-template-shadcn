@@ -45,7 +45,7 @@ export function SuccessState(props: Omit<StateViewProps, 'icon' | 'iconClassName
 }
 
 export function ErrorState(props: Omit<StateViewProps, 'icon' | 'iconClassName'>) {
-  return <StateView icon={AlertOctagon} iconClassName="bg-danger/10 text-danger" title={props.title || "Something went wrong"} {...props} />;
+  return <StateView icon={AlertOctagon} iconClassName="bg-danger/10 text-danger" {...props} title={props.title || "Something went wrong"} />;
 }
 
 export function PermissionDenied(props: Partial<StateViewProps>) {

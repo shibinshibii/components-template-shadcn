@@ -27,7 +27,7 @@ export function AppDrawer({
 }: AppDrawerProps) {
   return (
     <Sheet open={open} onOpenChange={onOpenChange}>
-      {trigger && <SheetTrigger asChild>{trigger}</SheetTrigger>}
+      {trigger && <SheetTrigger render={trigger as React.ReactElement} />}
       <SheetContent side={side} className={cn("flex flex-col p-0 border-border", className)}>
         {(title || description) && (
           <SheetHeader className="px-6 py-5 border-b border-border/50 text-left">

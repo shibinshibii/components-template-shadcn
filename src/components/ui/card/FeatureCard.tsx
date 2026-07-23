@@ -24,7 +24,7 @@ export function FeatureCard({ title, description, icon: Icon, badge, className }
         </div>
         <div className="space-y-1.5 mt-2">
           <CardTitle className="leading-tight">{title}</CardTitle>
-          <Muted className="text-sm line-clamp-2">{description}</Muted>
+          <Muted className="text-sm">{description}</Muted>
         </div>
       </CardBody>
     </AppCard>

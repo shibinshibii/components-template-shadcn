@@ -1,16 +1,14 @@
 import {
-  Users,
-  GraduationCap,
-  CalendarCheck,
-  BookOpen,
-  DollarSign,
-  Briefcase,
-  Package,
-  Bus,
-  Home,
-  FileEdit,
-  Settings,
-  LayoutDashboard
+  LayoutDashboard,
+  Type,
+  MousePointerClick,
+  CalendarDays,
+  ToggleLeft,
+  MousePointer2,
+  CreditCard,
+  AppWindow,
+  TableProperties,
+  MessageSquareWarning,
 } from 'lucide-react';
 import type { ElementType } from 'react';
 
@@ -38,55 +36,33 @@ export const navigationConfig: NavGroup[] = [
     ]
   },
   {
-    id: 'academic',
-    label: 'Academics',
+    id: 'forms',
+    label: 'Forms',
     items: [
-      { id: 'students', label: 'Students', icon: Users, href: '/students', badge: '1.2k' },
-      { id: 'teachers', label: 'Teachers', icon: GraduationCap, href: '/teachers' },
-      { id: 'attendance', label: 'Attendance', icon: CalendarCheck, href: '/attendance' },
-      { 
-        id: 'exams', 
-        label: 'Exams', 
-        icon: FileEdit, 
-        children: [
-          { id: 'exam-schedule', label: 'Schedule', href: '/exams/schedule' },
-          { id: 'exam-results', label: 'Results', href: '/exams/results', badge: 'New' },
-        ]
-      },
+      { id: 'inputs', label: 'Inputs', icon: Type, href: '/showcase/inputs' },
+      { id: 'selects', label: 'Selects', icon: MousePointerClick, href: '/showcase/selects' },
+      { id: 'dates', label: 'Date Pickers', icon: CalendarDays, href: '/showcase/dates' },
+      { id: 'controls', label: 'Controls', icon: ToggleLeft, href: '/showcase/controls' },
     ]
   },
   {
-    id: 'administration',
-    label: 'Administration',
+    id: 'ui',
+    label: 'UI Elements',
     items: [
-      { id: 'hr', label: 'HR', icon: Briefcase, href: '/hr', permissions: ['admin'] },
-      { id: 'finance', label: 'Finance', icon: DollarSign, href: '/finance', permissions: ['admin', 'accountant'] },
+      { id: 'buttons', label: 'Buttons', icon: MousePointer2, href: '/showcase/buttons' },
+      { id: 'cards', label: 'Cards', icon: CreditCard, href: '/showcase/cards' },
+      { id: 'dialogs', label: 'Dialogs & Drawers', icon: AppWindow, href: '/showcase/dialogs' },
     ]
   },
   {
-    id: 'facilities',
-    label: 'Facilities',
+    id: 'data',
+    label: 'Data Display',
     items: [
-      { id: 'library', label: 'Library', icon: BookOpen, href: '/library' },
-      { id: 'inventory', label: 'Inventory', icon: Package, href: '/inventory' },
-      { id: 'transport', label: 'Transport', icon: Bus, href: '/transport' },
-      { id: 'hostel', label: 'Hostel', icon: Home, href: '/hostel' },
-    ]
-  },
-  {
-    id: 'system',
-    label: 'System',
-    items: [
-      { id: 'settings', label: 'Settings', icon: Settings, href: '/settings', permissions: ['admin'] },
+      { id: 'tables', label: 'Tables', icon: TableProperties, href: '/showcase/tables' },
+      { id: 'feedback', label: 'Feedback & States', icon: MessageSquareWarning, href: '/showcase/feedback' },
     ]
   }
 ];
 
-export const favoriteConfig: NavItem[] = [
-  { id: 'fav-students', label: 'Students', icon: Users, href: '/students' },
-  { id: 'fav-attendance', label: 'Attendance', icon: CalendarCheck, href: '/attendance' },
-];
-
-export const recentConfig: NavItem[] = [
-  { id: 'recent-exams', label: 'Exam Results', icon: FileEdit, href: '/exams/results' },
-];
+export const favoriteConfig: NavItem[] = [];
+export const recentConfig: NavItem[] = [];

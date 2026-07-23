@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { AppCard, CardBody } from './AppCard';
 import { Text, Muted } from '@/components/typography';
 

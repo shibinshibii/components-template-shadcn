@@ -1,4 +1,5 @@
 import { useState, useMemo } from 'react';
+import { useLocation, Link } from 'react-router-dom';
 import { cn } from '@/lib/utils';
 import { X, Home, Search, ChevronRight, PanelLeftClose, PanelLeftOpen } from 'lucide-react';
 import { Text, WidgetTitle, Muted, Tag } from '@/components/typography';
@@ -18,9 +19,10 @@ export function Sidebar({ isCollapsed, isMobileOpen, onCloseMobile, onToggleColl
     'exams': true, // Mock default open
   });
   
-  // Mock current user permissions and active route
+  // Mock current user permissions
   const userPermissions = ['admin'];
-  const activeHref = '/dashboard';
+  const location = useLocation();
+  const activeHref = location.pathname;
 
   const toggleExpand = (id: string) => {
     setExpandedItems(prev => ({ ...prev, [id]: !prev[id] }));
@@ -70,8 +72,8 @@ export function Sidebar({ isCollapsed, isMobileOpen, onCloseMobile, onToggleColl
     const Icon = item.icon;
 
     const linkContent = (
-      <a
-        href={hasChildren ? '#' : (item.href || '#')}
+      <Link
+        to={hasChildren ? '#' : (item.href || '#')}
         onClick={(e) => {
           if (hasChildren) {
             e.preventDefault();
@@ -117,7 +119,7 @@ export function Sidebar({ isCollapsed, isMobileOpen, onCloseMobile, onToggleColl
             )}
           </>
         )}
-      </a>
+      </Link>
     );
 
     return (

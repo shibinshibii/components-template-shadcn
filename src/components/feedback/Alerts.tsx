@@ -64,3 +64,14 @@ export function InlineMessage({ description, variant = 'default', className }: O
     </div>
   );
 }
+
+export function FormErrorAlert({ message, className }: { message?: string; className?: string }) {
+  if (!message) return null;
+  return <Alert variant="destructive" description={message} className={className} />;
+}
+
+export function SuccessAlert({ message, className }: { message?: string; className?: string }) {
+  if (!message) return null;
+  return <Alert variant="success" description={message} className={className} />;
+}
+

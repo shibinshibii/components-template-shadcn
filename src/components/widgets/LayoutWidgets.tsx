@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { AppCard, CardHeader, CardBody } from '@/components/ui/card';
 import { CardTitle, Muted, Text } from '@/components/typography';
 import { Calendar } from '@/components/ui/calendar'; 
@@ -21,7 +21,7 @@ export function TimelineWidget({ title = "Timeline", items }: { title?: string, 
       </CardHeader>
       <CardBody className="py-4">
         <div className="relative border-l border-muted-foreground/20 ml-3 space-y-6 py-2">
-          {items.map((item, index) => (
+          {items.map((item) => (
             <div key={item.id} className="relative pl-6">
               <span className={cn(
                 "absolute -left-1.5 top-1.5 flex h-3 w-3 rounded-full ring-4 ring-card",

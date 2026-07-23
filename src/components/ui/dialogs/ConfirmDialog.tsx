@@ -30,12 +30,12 @@ export function ConfirmDialog({
 }: ConfirmDialogProps) {
   return (
     <AlertDialog open={open} onOpenChange={onOpenChange}>
-      {trigger && <AlertDialogTrigger asChild>{trigger}</AlertDialogTrigger>}
+      {trigger && <AlertDialogTrigger render={trigger as React.ReactElement} />}
       <AlertDialogContent>
         <AlertDialogHeader>
           <AlertDialogTitle>{title}</AlertDialogTitle>
-          <AlertDialogDescription asChild>
-            <div className="mt-2 text-sm text-muted-foreground">{description}</div>
+          <AlertDialogDescription render={<div className="mt-2 text-sm text-muted-foreground" />}>
+            {description}
           </AlertDialogDescription>
         </AlertDialogHeader>
         <AlertDialogFooter>

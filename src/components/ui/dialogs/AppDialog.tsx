@@ -40,7 +40,7 @@ export function AppDialog({
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      {trigger && <DialogTrigger asChild>{trigger}</DialogTrigger>}
+      {trigger && <DialogTrigger render={trigger as React.ReactElement} />}
       <DialogContent className={cn(widthClass, "flex flex-col gap-0 p-0 overflow-hidden", className)}>
         {(title || description) && (
           <DialogHeader className="px-6 py-5 border-b border-border/50 text-left">
